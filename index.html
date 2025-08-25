@@ -50,7 +50,7 @@
 <body class="bg-brand-purple text-gray-200">
 
     <!-- START: Lofi Music Player -->
-    <audio id="lofi-music" src="https://stream.lofi.co/lofi" loop></audio>
+    <audio id="lofi-music" src="https://www.chosic.com/wp-content/uploads/2021/04/And-So-It-Begins-Inspired-By-Crush-Sometimes.mp3" loop></audio>
     <button id="music-toggle" class="fixed bottom-6 right-6 z-50 bg-brand-yellow/80 backdrop-blur-sm text-brand-purple p-3 rounded-full shadow-lg hover:bg-brand-yellow transition-all duration-300 focus:outline-none">
         <!-- Play Icon -->
         <svg id="play-icon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -340,16 +340,22 @@
         music.volume = 0.3; 
 
         musicToggle.addEventListener('click', () => {
-            isPlaying = !isPlaying;
             if (isPlaying) {
-                music.play();
-                playIcon.classList.add('hidden');
-                pauseIcon.classList.remove('hidden');
-            } else {
                 music.pause();
                 playIcon.classList.remove('hidden');
                 pauseIcon.classList.add('hidden');
+            } else {
+                // UPDATED: Added try/catch for better error handling
+                try {
+                    music.play();
+                    playIcon.classList.add('hidden');
+                    pauseIcon.classList.remove('hidden');
+                } catch (error) {
+                    console.error("Error playing audio:", error);
+                    // You could optionally display a message to the user here
+                }
             }
+            isPlaying = !isPlaying;
         });
         // --- END: Lofi Music Player Logic ---
 
