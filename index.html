@@ -39,10 +39,13 @@
     <header class="bg-brand-purple/80 backdrop-blur-sm fixed top-0 left-0 right-0 z-50">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
             <a href="#" class="text-2xl font-bold text-white hover:text-brand-yellow transition-colors">Andrew Branum</a>
-            <nav class="hidden md:flex space-x-8">
+            <nav class="hidden md:flex items-center space-x-8">
                 <a href="#about" class="text-gray-300 hover:text-brand-yellow transition-colors">About</a>
+                <a href="#experience" class="text-gray-300 hover:text-brand-yellow transition-colors">Experience</a>
                 <a href="#projects" class="text-gray-300 hover:text-brand-yellow transition-colors">Projects</a>
                 <a href="#contact" class="text-gray-300 hover:text-brand-yellow transition-colors">Contact</a>
+                <a href="https://www.linkedin.com/in/branum-andrew/" target="_blank" class="text-gray-300 hover:text-brand-yellow transition-colors">LinkedIn</a>
+                <a href="https://github.com/Andrew-Branum1" target="_blank" class="text-gray-300 hover:text-brand-yellow transition-colors">GitHub</a>
             </nav>
             <button id="mobile-menu-button" class="md:hidden text-gray-300 hover:text-white focus:outline-none">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
@@ -50,8 +53,11 @@
         </div>
         <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
             <a href="#about" class="block py-2 text-gray-300 hover:text-brand-yellow">About</a>
+            <a href="#experience" class="block py-2 text-gray-300 hover:text-brand-yellow">Experience</a>
             <a href="#projects" class="block py-2 text-gray-300 hover:text-brand-yellow">Projects</a>
             <a href="#contact" class="block py-2 text-gray-300 hover:text-brand-yellow">Contact</a>
+             <a href="https://www.linkedin.com/in/branum-andrew/" target="_blank" class="block py-2 text-gray-300 hover:text-brand-yellow">LinkedIn</a>
+            <a href="https://github.com/Andrew-Branum1" target="_blank" class="block py-2 text-gray-300 hover:text-brand-yellow">GitHub</a>
         </div>
     </header>
 
@@ -67,9 +73,14 @@
                 <p class="text-lg md:text-xl text-gray-400 mb-8">
                     A full-stack software engineer with expertise in designing, developing, and deploying scalable applications using Angular, Node.js, C#/.NET, and AWS.
                 </p>
-                <a href="#contact" class="bg-brand-yellow text-brand-purple font-bold py-3 px-6 rounded-lg hover:bg-amber-300 transition-all duration-300">
-                    Get In Touch
-                </a>
+                <div class="flex items-center space-x-4">
+                    <a href="#contact" class="bg-brand-yellow text-brand-purple font-bold py-3 px-6 rounded-lg hover:bg-amber-300 transition-all duration-300">
+                        Get In Touch
+                    </a>
+                    <a href="Most Recent Resume Default - Branum.docx" download class="border-2 border-brand-yellow text-brand-yellow font-bold py-3 px-6 rounded-lg hover:bg-brand-yellow hover:text-brand-purple transition-all duration-300">
+                        Download Resume
+                    </a>
+                </div>
             </div>
         </section>
 
@@ -80,17 +91,20 @@
                     <img src="https://placehold.co/400x400/241c3a/facc15?text=Andrew" alt="Andrew Branum" class="rounded-full shadow-lg mx-auto">
                 </div>
                 <div class="md:w-2/3">
-                    <p class="text-gray-400 mb-4">
-                        As a dedicated Software Developer at Machinify, I specialize in architecting and launching commercial web services from concept to production. I thrive in Agile environments, leveraging CI/CD pipelines to enhance development workflows and deliver outcome-driven solutions. My experience includes optimizing SQL queries to boost data retrieval times and performing root-cause analysis to maintain high system uptime.
-                    </p>
                     <p class="text-gray-400 mb-6">
-                        I hold a Bachelor's in Computer Science and Engineering from the University of Louisville and am currently completing my Master's. I'm passionate about building robust platforms that streamline processes and solve complex problems.
+                        As a dedicated Software Developer, I specialize in architecting and launching commercial web services from concept to production. I thrive in Agile environments, leveraging CI/CD pipelines to enhance development workflows and deliver outcome-driven solutions. My experience includes optimizing SQL queries to boost data retrieval times and performing root-cause analysis to maintain high system uptime. I'm passionate about building robust platforms that streamline processes and solve complex problems.
                     </p>
                     <h3 class="text-xl font-semibold text-white mb-4">My Skills</h3>
-                    <div id="skills-container" class="flex flex-wrap gap-3">
+                    <div id="skills-container" class="space-y-4">
                         </div>
                 </div>
             </div>
+        </section>
+
+        <section id="experience" class="py-20 fade-in-section">
+            <h2 class="text-4xl font-bold text-white mb-12 text-center">Professional Experience</h2>
+            <div id="experience-container" class="max-w-3xl mx-auto">
+                </div>
         </section>
 
         <section id="projects" class="py-20 fade-in-section">

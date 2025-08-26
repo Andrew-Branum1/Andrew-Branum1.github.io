@@ -1,13 +1,44 @@
 document.addEventListener('DOMContentLoaded', () => {
     const skillsContainer = document.getElementById('skills-container');
     const projectsContainer = document.getElementById('projects-container');
+    const experienceContainer = document.getElementById('experience-container');
 
     // Populate Skills
-    portfolioData.skills.forEach(skill => {
-        const skillElement = document.createElement('span');
-        skillElement.className = 'bg-brand-light-purple text-brand-yellow py-2 px-4 rounded-lg';
-        skillElement.textContent = skill;
-        skillsContainer.appendChild(skillElement);
+    for (const category in portfolioData.skills) {
+        const categoryContainer = document.createElement('div');
+        categoryContainer.className = 'mb-4';
+        
+        const categoryTitle = document.createElement('h4');
+        categoryTitle.className = 'text-lg font-semibold text-white mb-2';
+        categoryTitle.textContent = category;
+        categoryContainer.appendChild(categoryTitle);
+        
+        const skillsList = document.createElement('div');
+        skillsList.className = 'flex flex-wrap gap-2';
+        
+        portfolioData.skills[category].forEach(skill => {
+            const skillElement = document.createElement('span');
+            skillElement.className = 'bg-brand-light-purple text-brand-yellow py-1 px-3 rounded-lg text-sm';
+            skillElement.textContent = skill;
+            skillsList.appendChild(skillElement);
+        });
+        
+        categoryContainer.appendChild(skillsList);
+        skillsContainer.appendChild(categoryContainer);
+    }
+
+    // Populate Experience
+    portfolioData.experience.forEach(job => {
+        const jobElement = document.createElement('div');
+        jobElement.className = 'mb-8';
+        jobElement.innerHTML = `
+            <h3 class="text-2xl font-bold text-white">${job.role}</h3>
+            <p class="text-brand-yellow font-semibold mb-2">${job.company} | ${job.date}</p>
+            <ul class="list-disc list-inside text-gray-400 space-y-2">
+                ${job.description.map(point => `<li>${point}</li>`).join('')}
+            </ul>
+        `;
+        experienceContainer.appendChild(jobElement);
     });
 
     // Populate Projects
