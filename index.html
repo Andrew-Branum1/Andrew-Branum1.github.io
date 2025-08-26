@@ -9,13 +9,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
     <script>
-        // Custom color theme configuration for Tailwind CSS
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
                         'brand-purple': '#241c3a',
-                        'brand-yellow': '#facc15', // Using Tailwind's amber-400
+                        'brand-yellow': '#facc15',
                         'brand-light-purple': '#3a3055',
                     }
                 }
@@ -23,10 +22,7 @@
         }
     </script>
     <style>
-        body {
-            font-family: 'Inter', sans-serif;
-        }
-        /* Simple animation for fade-in effect on scroll */
+        body { font-family: 'Inter', sans-serif; }
         .fade-in-section {
             opacity: 0;
             transform: translateY(20px);
@@ -36,59 +32,31 @@
             opacity: 1;
             transform: translateY(0);
         }
-        /* Typing cursor effect */
-        .typing-cursor::after {
-            content: '|';
-            animation: blink 1s step-end infinite;
-        }
-        @keyframes blink {
-            from, to { color: transparent }
-            50% { color: #facc15; }
-        }
     </style>
 </head>
 <body class="bg-brand-purple text-gray-200">
 
-    <!-- START: Lofi Music Player -->
-    <audio id="lofi-music" src="https://www.chosic.com/wp-content/uploads/2021/04/And-So-It-Begins-Inspired-By-Crush-Sometimes.mp3" loop></audio>
-    <button id="music-toggle" class="fixed bottom-6 right-6 z-50 bg-brand-yellow/80 backdrop-blur-sm text-brand-purple p-3 rounded-full shadow-lg hover:bg-brand-yellow transition-all duration-300 focus:outline-none">
-        <!-- Play Icon -->
-        <svg id="play-icon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3l14 9-14 9V3z" />
-        </svg>
-        <!-- Pause Icon (hidden by default) -->
-        <svg id="pause-icon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 9v6m4-6v6" />
-        </svg>
-    </button>
-    <!-- END: Lofi Music Player -->
-
-    <!-- Header & Navigation -->
     <header class="bg-brand-purple/80 backdrop-blur-sm fixed top-0 left-0 right-0 z-50">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
             <a href="#" class="text-2xl font-bold text-white hover:text-brand-yellow transition-colors">Andrew Branum</a>
             <nav class="hidden md:flex space-x-8">
                 <a href="#about" class="text-gray-300 hover:text-brand-yellow transition-colors">About</a>
                 <a href="#projects" class="text-gray-300 hover:text-brand-yellow transition-colors">Projects</a>
-                <a href="#ai-playground" class="text-gray-300 hover:text-brand-yellow transition-colors">AI Playground</a>
                 <a href="#contact" class="text-gray-300 hover:text-brand-yellow transition-colors">Contact</a>
             </nav>
             <button id="mobile-menu-button" class="md:hidden text-gray-300 hover:text-white focus:outline-none">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
             </button>
         </div>
-        <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
             <a href="#about" class="block py-2 text-gray-300 hover:text-brand-yellow">About</a>
             <a href="#projects" class="block py-2 text-gray-300 hover:text-brand-yellow">Projects</a>
-            <a href="#ai-playground" class="block py-2 text-gray-300 hover:text-brand-yellow">AI Playground</a>
             <a href="#contact" class="block py-2 text-gray-300 hover:text-brand-yellow">Contact</a>
         </div>
     </header>
 
     <main class="container mx-auto px-6 pt-24">
 
-        <!-- Hero Section -->
         <section id="hero" class="min-h-[70vh] flex items-center fade-in-section">
             <div class="max-w-3xl">
                 <h1 class="text-5xl md:text-7xl font-bold text-white leading-tight mb-4">
@@ -105,7 +73,6 @@
             </div>
         </section>
 
-        <!-- About Section -->
         <section id="about" class="py-20 fade-in-section">
             <h2 class="text-4xl font-bold text-white mb-12 text-center">About Me</h2>
             <div class="flex flex-col md:flex-row items-center gap-12">
@@ -113,7 +80,7 @@
                     <img src="https://placehold.co/400x400/241c3a/facc15?text=Andrew" alt="Andrew Branum" class="rounded-full shadow-lg mx-auto">
                 </div>
                 <div class="md:w-2/3">
-                    <p class="text-gray-400 mb-4" id="about-me-text">
+                    <p class="text-gray-400 mb-4">
                         As a dedicated Software Developer at Machinify, I specialize in architecting and launching commercial web services from concept to production. I thrive in Agile environments, leveraging CI/CD pipelines to enhance development workflows and deliver outcome-driven solutions. My experience includes optimizing SQL queries to boost data retrieval times and performing root-cause analysis to maintain high system uptime.
                     </p>
                     <p class="text-gray-400 mb-6">
@@ -121,115 +88,22 @@
                     </p>
                     <h3 class="text-xl font-semibold text-white mb-4">My Skills</h3>
                     <div id="skills-container" class="flex flex-wrap gap-3">
-                        <span class="bg-brand-light-purple text-brand-yellow py-2 px-4 rounded-lg">JavaScript/TypeScript</span>
-                        <span class="bg-brand-light-purple text-brand-yellow py-2 px-4 rounded-lg">C#</span>
-                        <span class="bg-brand-light-purple text-brand-yellow py-2 px-4 rounded-lg">Python</span>
-                        <span class="bg-brand-light-purple text-brand-yellow py-2 px-4 rounded-lg">SQL</span>
-                        <span class="bg-brand-light-purple text-brand-yellow py-2 px-4 rounded-lg">Angular</span>
-                        <span class="bg-brand-light-purple text-brand-yellow py-2 px-4 rounded-lg">Node.js</span>
-                        <span class="bg-brand-light-purple text-brand-yellow py-2 px-4 rounded-lg">.NET Core</span>
-                        <span class="bg-brand-light-purple text-brand-yellow py-2 px-4 rounded-lg">AWS</span>
-                        <span class="bg-brand-light-purple text-brand-yellow py-2 px-4 rounded-lg">Azure DevOps</span>
-                        <span class="bg-brand-light-purple text-brand-yellow py-2 px-4 rounded-lg">Git</span>
-                        <span class="bg-brand-light-purple text-brand-yellow py-2 px-4 rounded-lg">Docker</span>
-                    </div>
+                        </div>
                 </div>
             </div>
         </section>
 
-        <!-- Projects Section -->
         <section id="projects" class="py-20 fade-in-section">
             <h2 class="text-4xl font-bold text-white mb-12 text-center">My Projects</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                
-                <!-- Project Card 1: AI Financial Advisor -->
-                <div class="bg-brand-light-purple rounded-lg overflow-hidden shadow-lg transform hover:-translate-y-2 transition-transform duration-300">
-                    <img src="https://placehold.co/600x400/241c3a/facc15?text=AI+Advisor" alt="AI Financial Advisor" class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-2xl font-bold text-white mb-2">AI Financial Advisor</h3>
-                        <p class="text-gray-400 mb-4">A full-stack app providing personalized financial advice using a Reinforcement Learning model for portfolios and an LLM for human-readable explanations.</p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="text-sm bg-gray-700 text-brand-yellow py-1 px-3 rounded-full">Python</span>
-                            <span class="text-sm bg-gray-700 text-brand-yellow py-1 px-3 rounded-full">Flask</span>
-                            <span class="text-sm bg-gray-700 text-brand-yellow py-1 px-3 rounded-full">PyTorch</span>
-                            <span class="text-sm bg-gray-700 text-brand-yellow py-1 px-3 rounded-full">Gemini API</span>
-                        </div>
-                        <div class="flex space-x-4">
-                            <a href="https://github.com/Andrew-Branum1/ai-financial-advisor" target="_blank" class="text-brand-yellow hover:underline">GitHub</a>
-                        </div>
-                    </div>
+            <div id="projects-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 </div>
-
-                <!-- Project Card 2: Data Analysis & NLP -->
-                <div class="bg-brand-light-purple rounded-lg overflow-hidden shadow-lg transform hover:-translate-y-2 transition-transform duration-300">
-                    <img src="https://placehold.co/600x400/241c3a/facc15?text=Data+NLP" alt="Data Analysis & NLP" class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-2xl font-bold text-white mb-2">Data Analysis & NLP</h3>
-                        <p class="text-gray-400 mb-4">Scraped and analyzed Reddit data to perform text classification and clustering, identifying trends and topics within large datasets using NLP techniques.</p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="text-sm bg-gray-700 text-brand-yellow py-1 px-3 rounded-full">Python</span>
-                            <span class="text-sm bg-gray-700 text-brand-yellow py-1 px-3 rounded-full">Pandas</span>
-                            <span class="text-sm bg-gray-700 text-brand-yellow py-1 px-3 rounded-full">Scikit-learn</span>
-                        </div>
-                        <div class="flex space-x-4">
-                            <a href="https://github.com/andrew-branum1/python/tree/main/Reddit%20API%20Scrape" target="_blank" class="text-brand-yellow hover:underline">GitHub</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project Card 3: Computer Virus Simulation -->
-                <div class="bg-brand-light-purple rounded-lg overflow-hidden shadow-lg transform hover:-translate-y-2 transition-transform duration-300">
-                    <img src="https://placehold.co/600x400/241c3a/facc15?text=Simulation" alt="Computer Virus Simulation" class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-2xl font-bold text-white mb-2">Computer Virus Simulation</h3>
-                        <p class="text-gray-400 mb-4">A Python-based simulation modeling the spread of a computer virus through a network, visualizing the infection rate and impact over time.</p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="text-sm bg-gray-700 text-brand-yellow py-1 px-3 rounded-full">Python</span>
-                            <span class="text-sm bg-gray-700 text-brand-yellow py-1 px-3 rounded-full">Matplotlib</span>
-                            <span class="text-sm bg-gray-700 text-brand-yellow py-1 px-3 rounded-full">NumPy</span>
-                        </div>
-                        <div class="flex space-x-4">
-                            <a href="https://github.com/andrew-branum1/python/tree/main/Simulations" target="_blank" class="text-brand-yellow hover:underline">GitHub</a>
-                        </div>
-                    </div>
-                </div>
-                
-            </div>
         </section>
 
-        <!-- AI Playground Section -->
-        <section id="ai-playground" class="py-20 fade-in-section">
-            <div class="max-w-3xl mx-auto text-center">
-                <h2 class="text-4xl font-bold text-white mb-4">AI Playground</h2>
-                <p class="text-gray-400 mb-8">
-                    This tool uses the Gemini API to generate a cover letter based on a job description and my profile. Paste a job description below to see it work!
-                </p>
-                <div class="bg-brand-light-purple rounded-lg p-6 shadow-lg text-left">
-                    <form id="cover-letter-form">
-                        <label for="job-description" class="block text-lg font-semibold text-white mb-2">Job Description</label>
-                        <textarea id="job-description" rows="8" class="w-full bg-gray-700 text-gray-200 rounded-lg p-4 focus:outline-none focus:ring-2 focus:ring-brand-yellow" placeholder="Paste the job description here..."></textarea>
-                        <button type="submit" id="generate-btn" class="mt-4 w-full bg-brand-yellow text-brand-purple font-bold py-3 px-6 rounded-lg hover:bg-amber-300 transition-all duration-300">
-                            Generate Cover Letter
-                        </button>
-                    </form>
-                    <div id="cover-letter-output" class="mt-6 hidden">
-                        <h3 class="text-2xl font-bold text-white mb-4">Generated Cover Letter:</h3>
-                        <div id="letter-content" class="bg-gray-700 text-gray-300 rounded-lg p-4 whitespace-pre-wrap"></div>
-                    </div>
-                     <div id="loading-indicator" class="mt-6 hidden">
-                        <p class="text-brand-yellow typing-cursor">Generating...</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-
-        <!-- Contact Section -->
         <section id="contact" class="py-20 fade-in-section">
             <div class="max-w-xl mx-auto text-center">
                 <h2 class="text-4xl font-bold text-white mb-4">Get In Touch</h2>
                 <p class="text-gray-400 mb-8">
-                    I'm currently open to new opportunities and collaborations. Whether you have a question or just want to say hi, my inbox is always open. I'll get back to you as soon as I can!
+                    I'm currently open to new opportunities and collaborations. Feel free to reach out—I'll get back to you as soon as I can!
                 </p>
                 <a href="mailto:drewbranum53@gmail.com" class="inline-block bg-brand-yellow text-brand-purple font-bold py-4 px-8 rounded-lg hover:bg-amber-300 transition-all duration-300">
                     Say Hello
@@ -239,143 +113,27 @@
 
     </main>
 
-    <!-- Footer -->
     <footer class="bg-brand-light-purple/50">
         <div class="container mx-auto px-6 py-8 text-center text-gray-400">
             <p>&copy; 2025 Andrew Branum. All rights reserved.</p>
-            <p class="mt-2">Designed and built with ❤️</p>
         </div>
     </footer>
 
+    <script src="data.js"></script>
+    <script src="main.js"></script>
     <script>
-        // --- START: Gemini API Logic ---
-        const coverLetterForm = document.getElementById('cover-letter-form');
-        const generateBtn = document.getElementById('generate-btn');
-        const jobDescriptionInput = document.getElementById('job-description');
-        const coverLetterOutput = document.getElementById('cover-letter-output');
-        const letterContent = document.getElementById('letter-content');
-        const loadingIndicator = document.getElementById('loading-indicator');
-
-        coverLetterForm.addEventListener('submit', async (e) => {
-            e.preventDefault();
-            const jobDescription = jobDescriptionInput.value;
-            if (!jobDescription.trim()) {
-                jobDescriptionInput.placeholder = "Please paste a job description first!";
-                return;
-            }
-
-            loadingIndicator.classList.remove('hidden');
-            coverLetterOutput.classList.add('hidden');
-            generateBtn.disabled = true;
-            generateBtn.textContent = 'Generating...';
-
-            const skillsList = Array.from(document.querySelectorAll('#skills-container span')).map(skill => skill.textContent).join(', ');
-            const aboutMeText = document.getElementById('about-me-text').textContent.trim();
-            
-            const prompt = `
-                My name is Andrew Branum. Based on my professional profile below, write a professional and enthusiastic cover letter for the following job description.
-
-                **My Professional Profile:**
-                - **Summary:** A full-stack software engineer with expertise in designing, developing, and deploying scalable applications using Angular, Node.js, C#/.NET, and AWS. I have experience architecting and launching commercial web services, optimizing SQL queries, and performing root-cause analysis to maintain high system uptime. I am passionate about leveraging Agile methodologies and CI/CD pipelines to deliver outcome-driven solutions.
-                - **My Skills:** ${skillsList}
-                - **Key Project:** I developed an AI Financial Advisor, a full-stack application providing personalized financial advice using a Reinforcement Learning model (Python, PyTorch) for portfolio allocation and an LLM (Gemini API) for human-readable explanations.
-
-                **Job Description:**
-                ---
-                ${jobDescription}
-                ---
-
-                Please write a cover letter that is tailored to this specific role, highlighting how my skills and experience align with the company's needs. Keep it concise, professional, and impactful.
-            `;
-
-            try {
-                let chatHistory = [];
-                chatHistory.push({ role: "user", parts: [{ text: prompt }] });
-                const payload = { contents: chatHistory };
-                const apiKey = "" // If you want to use models other than gemini-2.5-flash-preview-05-20 or imagen-3.0-generate-002, provide an API key here. Otherwise, leave this as-is.
-                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${apiKey}`;
-                
-                const response = await fetch(apiUrl, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(payload)
-                });
-
-                if (!response.ok) {
-                    throw new Error(`API request failed with status ${response.status}`);
-                }
-                
-                const result = await response.json();
-                
-                if (result.candidates && result.candidates.length > 0 &&
-                    result.candidates[0].content && result.candidates[0].content.parts &&
-                    result.candidates[0].content.parts.length > 0) {
-                    const text = result.candidates[0].content.parts[0].text;
-                    letterContent.textContent = text;
-                    coverLetterOutput.classList.remove('hidden');
-                } else {
-                    letterContent.textContent = 'Sorry, something went wrong while generating the cover letter. Please try again.';
-                    coverLetterOutput.classList.remove('hidden');
-                }
-
-            } catch (error) {
-                console.error('Error calling Gemini API:', error);
-                letterContent.textContent = `An error occurred: ${error.message}. (Note: This is expected on GitHub Pages due to CORS. A proxy is needed for a live environment.)`;
-                coverLetterOutput.classList.remove('hidden');
-            } finally {
-                loadingIndicator.classList.add('hidden');
-                generateBtn.disabled = false;
-                generateBtn.textContent = 'Generate Cover Letter';
-            }
-        });
-        // --- END: Gemini API Logic ---
-
-
-        // --- START: Lofi Music Player Logic ---
-        const music = document.getElementById('lofi-music');
-        const musicToggle = document.getElementById('music-toggle');
-        const playIcon = document.getElementById('play-icon');
-        const pauseIcon = document.getElementById('pause-icon');
-        let isPlaying = false;
-        music.volume = 0.3; 
-
-        musicToggle.addEventListener('click', () => {
-            if (isPlaying) {
-                music.pause();
-                playIcon.classList.remove('hidden');
-                pauseIcon.classList.add('hidden');
-            } else {
-                // UPDATED: Added try/catch for better error handling
-                try {
-                    music.play();
-                    playIcon.classList.add('hidden');
-                    pauseIcon.classList.remove('hidden');
-                } catch (error) {
-                    console.error("Error playing audio:", error);
-                    // You could optionally display a message to the user here
-                }
-            }
-            isPlaying = !isPlaying;
-        });
-        // --- END: Lofi Music Player Logic ---
-
-
-        // Mobile menu toggle
+        // Basic interactivity for mobile menu and animations
         const mobileMenuButton = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
         mobileMenuButton.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
         });
-
-        // Close mobile menu when a link is clicked
         const mobileMenuLinks = mobileMenu.getElementsByTagName('a');
         for (let link of mobileMenuLinks) {
             link.addEventListener('click', () => {
                 mobileMenu.classList.add('hidden');
             });
         }
-
-        // Smooth scroll for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -384,8 +142,6 @@
                 });
             });
         });
-
-        // Fade-in animation on scroll
         const faders = document.querySelectorAll('.fade-in-section');
         const appearOptions = {
             threshold: 0.1,
@@ -393,15 +149,11 @@
         };
         const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
             entries.forEach(entry => {
-                if (!entry.isIntersecting) {
-                    return;
-                } else {
-                    entry.target.classList.add('is-visible');
-                    appearOnScroll.unobserve(entry.target);
-                }
+                if (!entry.isIntersecting) return;
+                entry.target.classList.add('is-visible');
+                appearOnScroll.unobserve(entry.target);
             });
         }, appearOptions);
-
         faders.forEach(fader => {
             appearOnScroll.observe(fader);
         });
